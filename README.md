@@ -1,0 +1,2 @@
+# GaussianSplattingToUnity
+Gaussian Splattingの.plyファイルをUnityで表示させる方法
