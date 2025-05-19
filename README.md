@@ -1,29 +1,30 @@
 # .ply（GaussianSplatting）をUnityで表示させる方法
 ## まえがき
-Unityは.plyファイルには非対応の為、拡張機能を介してアセットを生成させてから表示させる必要がある。
+Unityは.plyファイルには非対応の為、拡張機能を介してアセットに変換させてから表示させる必要がある。
 >参考：https://docs.unity3d.com/ja/560/Manual/HOWTO-importObject.html
 
 私の環境で実行できた手順を記す。
 
-## 動作環境
-以下の環境で行った。
+## 用意物
 - **Unity 2022.3.7f1**
   >[https://unity.com/ja/releases/editor/whats-new/2022.3.7](https://unity.com/ja/releases/editor/whats-new/2022.3.7)\
-  >上記サイトにアクセス、「INSTALL」をクリックしてUnityHUBを起動し、UnityHUBよりUnity2022.3.7f1をインストール。\
-  >[Unity Hub](https://unity.com/download)の事前インストールが必要となる。
-- **GitHubリポジトリ**
+  >上記サイトにアクセス、「INSTALL」をクリックしてUnity Hubを起動し、Unity HubよりUnity2022.3.7f1をインストール。\
+  >Unity 2022.3.7f1のインストールには[Unity Hubの事前インストール](https://unity.com/download)が必要となる。
+- **GitHubクローン**
   >[https://github.com/aras-p/UnityGaussianSplatting](https://github.com/aras-p/UnityGaussianSplatting)\
-  >後述。
+  >今回使用するUnity拡張機能。GitHubで公開されている。
 - **.plyファイル**
+  >Unityに取り込みたい.plyファイルを用意する。\
+  >使用する.plyファイルにはガウス分布が含まれている必要がある。ガウス分布が含まれていない場合には実行できない。
 
 ## 導入
-1. GitHubDeskTopで [https://github.com/aras-p/UnityGaussianSplatting.git](https://github.com/aras-p/UnityGaussianSplatting.git) を任意のディレクトリにクローン。\
+1. [GitHub DeskTop](https://docs.github.com/ja/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop)で [https://github.com/aras-p/UnityGaussianSplatting.git](https://github.com/aras-p/UnityGaussianSplatting.git) を任意のディレクトリにクローン。\
    または、コマンドプロンプトを起動して任意のディレクトリに移動後、以下のコマンドを実行してクローンする。
    ```
    git clone https://github.com/aras-p/UnityGaussianSplatting.git
    ```
 2. クローン出来たら、`.\UnityGaussianSplatting\projects\GaussianExample\Assets\GSTestScene.unity`を開く。\
-   ※以下のようなエラーウィンドウが出た場合、最も右の「Continue」で続行する。\
+   ※以下のようなエラーウィンドウが出た場合、「Continue」を選択して続行する。\
    ![image](https://github.com/user-attachments/assets/41e61121-61ca-48c7-ab18-aa47a2bf6422)
 3. シーンをUnityで起動出来たら、Unityウィンドウ上部リボンメニューから、「Tools」→「Gaussian Splats」→「Create GaussianSplatsAsset」を選択。\
    ![image](https://github.com/user-attachments/assets/e95f351b-8c87-43b6-b43d-dd16440966b5)
@@ -36,3 +37,10 @@ Unityは.plyファイルには非対応の為、拡張機能を介してアセ�
    ![image](https://github.com/user-attachments/assets/92728a78-dfec-497d-aa78-04dac3f8f0f9)
 8. シーンに反映されれば完了。
 
+## 参考文献
+- Gaussian-Splatting をUnityで動かしてみた｜aster\
+  [https://zenn.dev/aster_ideatech/articles/523b4909d4e48f](https://zenn.dev/aster_ideatech/articles/523b4909d4e48f)
+- 3D アプリケーションからモデルをインポートする方法 - Unity マニュアル\
+  [https://docs.unity3d.com/ja/560/Manual/HOWTO-importObject.html](https://docs.unity3d.com/ja/560/Manual/HOWTO-importObject.html)
+- aras-p_UnityGaussianSplatting_ Toy Gaussian Splatting visualization in Unity\
+  [https://github.com/aras-p/UnityGaussianSplatting](https://github.com/aras-p/UnityGaussianSplatting)
