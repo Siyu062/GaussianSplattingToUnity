@@ -1,4 +1,4 @@
-# .ply（GaussianSplatting）をUnityで表示させる方法
+# .ply（GaussianSplatting）をUnityで表示させる方法（≒仕様書）
 ## まえがき
 Unityは.plyファイルには非対応の為、拡張機能を介してアセットに変換させてから表示させる必要がある。
 >参考：https://docs.unity3d.com/ja/560/Manual/HOWTO-importObject.html
